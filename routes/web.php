@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','articleCont@displayHome')->name('home');
+Route::get('/read/{id}','articleCont@readArticle')->name('read');
