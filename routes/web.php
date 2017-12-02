@@ -13,3 +13,5 @@
 
 Route::get('/','articleCont@displayHome')->name('home');
 Route::get('/read/{id}','articleCont@readArticle')->name('read');
+Route::get('/edit/{id}','articleCont@editArticle')->name('edit');
+Route::post('/edit/{id}','articleCont@editArticle');

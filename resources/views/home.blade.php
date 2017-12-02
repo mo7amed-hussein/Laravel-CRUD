@@ -23,7 +23,7 @@
 			<td><?php echo str_limit($article->body,50) ?></td>
 			<td>
 				<a href="{{route('read',['id'=>$article->id])}}" class="label label-primary">Read</a> | 
-				<a href="" class="label label-success">Edit</a> |
+				<a href="{{route('edit',['id'=>$article->id])}}" class="label label-success">Edit</a> |
 				<a href="" class="label label-danger">Delete</a> 
 			</td>
 		</tr>

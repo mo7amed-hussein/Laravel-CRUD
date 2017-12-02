@@ -19,4 +19,21 @@ class articleCont extends Controller
     	$article = Article::where('id',$id)->first();
     	return view('read',['article'=>$article]);
     }
+
+    public function editArticle(Request $request,$id)
+    {
+    	$article = Article::where('id',$id)->first();
+    	if($request->isMethod('post'))
+    	{
+    		$article->title = $request['title'];
+    		$article->body=$request['body'];
+    		$article->save();
+    		$message = "article updated successfully";
+    		return redirect()->route('home',['message'=>$message]);
+    	}
+    	else
+    	{
+    		return view('edit',['article'=>$article]);
+    	}
+    }
 }
