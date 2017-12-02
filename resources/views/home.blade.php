@@ -3,23 +3,32 @@
 @section('content')
 <table class="table table-hover table-striped">
 	<legend>All Articles</legend>
+	@if(count($articles) == 0)
+		<tr>no article till now
+		<a href="" class="label label-primary">click to add</a> 
+		</tr>
+	@else
+	
 	<thead>
 		<th>ID</th>
 		<th>Title</th>
 		<th>Description</th>
 		<th>Actions</th>
 	</thead>
-	<tbody>
+	<tbody >
+		@foreach($articles as $article)
 		<tr>
-			<td>1</td>
-			<td>new file</td>
-			<td>this is new</td>
+			<td>{{$article->id}}</td>
+			<td>{{$article->title}}</td>
+			<td><?php echo str_limit($article->body,50) ?></td>
 			<td>
-				<a href="" class="label label-primary">Read</a> | 
+				<a href="{{route('read',['id'=>$article->id])}}" class="label label-primary">Read</a> | 
 				<a href="" class="label label-success">Edit</a> |
 				<a href="" class="label label-danger">Delete</a> 
 			</td>
 		</tr>
+		@endforeach
+		@endif
 	</tbody>
 </table>
 @endsection
