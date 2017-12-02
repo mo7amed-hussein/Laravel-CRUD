@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Article ;
 
@@ -29,11 +29,21 @@ class articleCont extends Controller
     		$article->body=$request['body'];
     		$article->save();
     		$message = "article updated successfully";
-    		return redirect()->route('home',['message'=>$message]);
+    		Session::put('message',$message);
+    		return redirect()->route('home');
     	}
     	else
     	{
     		return view('edit',['article'=>$article]);
     	}
+    }
+
+    public function delArticle($id)
+    {
+    	$article = Article::where('id',$id)->first();
+    	$article->delete();
+    	$message = "article deleted successfully";
+    		Session::put('message',$message);
+    		return redirect()->route('home');
     }
 }
