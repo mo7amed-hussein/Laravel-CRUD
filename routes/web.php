@@ -17,3 +17,6 @@ Route::get('/edit/{id}','articleCont@editArticle')->name('edit');
 Route::post('/edit/{id}','articleCont@editArticle');
 
 Route::get('/del/{id}','articleCont@delArticle')->name('del');
+
+Route::get('/create','articleCont@createArticle')->name('create');
+Route::post('/create','articleCont@createArticle');

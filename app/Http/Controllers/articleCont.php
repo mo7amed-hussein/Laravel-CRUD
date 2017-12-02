@@ -46,4 +46,21 @@ class articleCont extends Controller
     		Session::put('message',$message);
     		return redirect()->route('home');
     }
+
+    public function createArticle(Request $request)
+    {
+    	if($request->isMethod('post'))
+    	{
+    		$article = new Article();
+    		$article->title = $request['title'];
+    		$article->body=$request['body'];
+    		$article->save();
+    		$message = "article added successfully";
+    		Session::put('message',$message);
+    		return redirect()->route('home');
+
+    	}
+    	return view('create');
+
+    }	
 }

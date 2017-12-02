@@ -8,6 +8,6 @@
 <div class="well">
 <a href="{{route('home')}}" class="label label-primary">back</a> | 
 				<a href="{{route('edit',['id'=>$article->id])}}" class="label label-success">Edit</a> |
-				<a href="" class="label label-danger">Delete</a> 
+				<a href="{{route('del',['id'=>$article->id])}}" class="label label-danger">Delete</a> 
 				</div>
 @endsection

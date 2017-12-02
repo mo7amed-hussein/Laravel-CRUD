@@ -11,7 +11,7 @@
 	<legend>All Articles</legend>
 	@if(count($articles) == 0)
 		<tr>no article till now
-		<a href="" class="label label-primary">click to add</a> 
+		<a href="{{route('create')}}" class="label label-primary">click to add</a> 
 		</tr>
 	@else
 	
