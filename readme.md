@@ -9,5 +9,5 @@ it has the following features
 	
 screenshots
 ==========
-![demo Screenshots]()	
+![demo Screenshots](https://github.com/mo7amed-hussein/Laravel-CRUD/blob/master/pic/shots.gif?raw=true)	
 	

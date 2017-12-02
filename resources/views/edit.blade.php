@@ -9,7 +9,7 @@
 	</div>
 	<div class="form-group">
 		<label>body</label>
-		<textarea name="body" class="form-control"
+		<textarea cols="20" rows="15" name="body" class="form-control"
 		>{{$article->body}}
 		</textarea>
 	</div>
